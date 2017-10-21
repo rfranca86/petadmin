@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171014043617) do
+ActiveRecord::Schema.define(version: 20171018174954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "street"
+    t.integer  "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_addresses_on_client_id", using: :btree
+  end
 
   create_table "campaign_clients", force: :cascade do |t|
     t.integer  "campaign_id"
@@ -255,6 +263,7 @@ ActiveRecord::Schema.define(version: 20171014043617) do
     t.datetime "updated_at",   null: false
   end
 
+  add_foreign_key "addresses", "clients"
   add_foreign_key "campaign_clients", "campaigns"
   add_foreign_key "campaign_clients", "clients"
   add_foreign_key "products", "suppliers"

@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'redis'
 gem 'sidekiq'
 gem 'fae-rails'
-
+gem "cocoon"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
