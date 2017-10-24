@@ -5,5 +5,6 @@
 
   main.content
     = fae_input f, :title
-    = fae_prefix f, :value, prefix: '$', placeholder: '50.00'
+    = fae_input f, :value
+    = fae_pulldown f, :discount, size: 'long', collection: Discount.discounts.to_a, selected: Discount.discounts[@item.discount]
 
