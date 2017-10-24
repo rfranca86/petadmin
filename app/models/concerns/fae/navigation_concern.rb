@@ -27,6 +27,7 @@ module Fae
       [
         item('Manage', subitems: [
           item('Clients', path: admin_clients_path),
+          item('Schedule Services', path: admin_schedules_path),
           item('Discounts', path: admin_discounts_path),
           item('Suppliers', path: admin_suppliers_path),
           item('Services', path: admin_services_path),

@@ -1,0 +1,14 @@
+= simple_form_for(['admin', @item]) do |f|
+  header.content-header.js-content-header
+    == render 'fae/shared/form_header', header: @klass_name
+  == render 'fae/shared/errors'
+
+  main.content
+    = fae_association f, :client
+
+    #schedule
+      h1 Service List
+      = f.simple_fields_for :schedule_statuses do |schedule_status|
+        = render 'schedule_status_fields', f: schedule_status
+      .links
+        = link_to_add_association 'Add Service', f, :schedule_statuses
