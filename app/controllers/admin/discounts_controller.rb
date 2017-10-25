@@ -5,9 +5,5 @@ module Admin
     def adjust_enum
       params[:discount][:discount] = params[:discount][:discount].to_i
     end
-
-    def set_discount
-      pass
-    end
   end
 end

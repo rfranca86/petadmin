@@ -47,7 +47,23 @@ product = Product.create({title: 'Ração Pedigree para Cães - 15kg',
                           observations: 'Para cães adultos',
                           supplier: Supplier.last})
 
+campaign = Campaign.create({title: 'Campaign 1',
+                            body: 'Campaign bla bla bla'})
 
-# campaign = Campaign.create({
+sell = Sell.create({discount: Discount.last,
+                    client: Client.last,
+                    observations: 'Sell sell sellll !!',
+                    status: 0,
+                    date: '24/10/2017'})
 
-# })
+sell_product = SellProduct.create({product: Product.last,
+                                    sell: Sell.last})
+
+sell_services = SellService.create({service: Service.last,
+                                    sell: Sell.last})
+
+campaign_clients = CampaignClient.create({campaign: Campaign.last,
+                                          client: Client.last})
+
+address = Address.create({street: 'Rua General Rocha 55',
+                          client: Client.last})

@@ -6,7 +6,7 @@ class Address < ApplicationRecord
     validates_presence_of :street
     
     def fae_display_field
-      id
+      street
     end
   
     def self.for_fae_index

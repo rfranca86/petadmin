@@ -18,7 +18,7 @@ main.content
             td = link_to item.fae_display_field, edit_admin_sell_path(item)
             td = item.date
             td = item.client.name
-            td = item.total
+            td = "$ #{item.total}"
             td = fae_date_format item.updated_at
             td = fae_delete_button item
       - else
