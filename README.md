@@ -1,24 +1,8 @@
 # README
+A Simple Admin for petshop
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Starting app
+ - docker-compose up --build
+ 
+* Preparing DB with some data and starting fae
+docker-compose run --rm app bundle exec rake db:drop db:create db:migrate db:seed fae:seed_db
